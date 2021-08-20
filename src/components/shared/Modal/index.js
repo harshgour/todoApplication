@@ -57,12 +57,14 @@ export default function AddModal({
   };
 
   const handleSubmit = () => {
-    setData(data => {
-      return [
-        ...data,
-        {text, date: new Date().toISOString(), key: count, status: 'Pending'},
-      ];
-    });
+    if (text !== '') {
+      setData(data => {
+        return [
+          ...data,
+          {text, date: new Date().toISOString(), key: count, status: 'Pending'},
+        ];
+      });
+    }
     setText('');
     setModalVisible(!modalVisible);
   };
@@ -141,7 +143,6 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    marginTop: 22,
     backgroundColor: 'white',
   },
   buttonClose: {
@@ -160,6 +161,7 @@ const styles = StyleSheet.create({
   addInput: {
     fontSize: 24,
     width: '100%',
+    color: 'black',
   },
   addButton: {
     height: 70,
