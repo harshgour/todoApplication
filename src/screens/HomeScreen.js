@@ -9,8 +9,6 @@ import {
   StatusBar,
   Animated,
   TouchableOpacity,
-  Pressable,
-  TouchableWithoutFeedback,
 } from 'react-native';
 import {DragSortableView} from 'react-native-drag-sort';
 import {globalStyles} from '../assets/styles/globalStyles';
